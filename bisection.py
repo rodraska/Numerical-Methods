@@ -1,14 +1,14 @@
 def f(x):
-    return (x ** 3 + 3 * x ** 2 + 4 * x - 10)
+    return (x ** 2 - 2)
 
 def bisection(nmax, tol):
     n = 0
-    x0 = -10
+    x0 = 0
     x1 = 10
     while n <= nmax:
         x2 = (x0 + x1) / 2
         if f(x2) == 0 or (x1 - x0) / 2 < tol:
-            return (x2)
+            break
         else:
             if f(x0) * f(x2) < 0:
                 x1 = x2
@@ -21,6 +21,6 @@ def bisection(nmax, tol):
         return ("Method Failed")
 
 def main():
-    print(bisection(100, 0.01))
+    print(bisection(30, 0.0000001))
 
-main()      
+main() 
